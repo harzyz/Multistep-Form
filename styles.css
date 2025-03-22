@@ -123,6 +123,10 @@
     justify-content: flex-start;
     align-items: flex-start;
   }
+  .sidebar{
+    width: 100%;
+    border: 1px solid red;
+  }
   .card_container {
     flex-direction: column;
     min-width: 100%;
@@ -137,6 +141,8 @@
   .mobile_sidebar {
     display: block;
     width: 100%;
+    height: 250px;
+    object-fit: cover;
   }
   .step_desc {
     display: none;
