@@ -1,114 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-*{
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+.wrapper {
+  background-color: #eef5ff;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card_container {
+  background-color: #fff;
+  height: 550px;
+  width: 65%;
+  min-width: 800px;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+}
+.sidebar {
+  position: relative;
+  height: 100%;
+  width: fit-content;
+  /* width: 30%; */
+}
+.desktop_sidebar {
+  height: 100%;
+}
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.step_number {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 1px solid white;
+}
+.mobile_sidebar {
+  display: none;
+}
+.sidebar_overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: #fff;
+  top: 0;
+}
+.step_desc {
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.step_desc p:last-child {
+  font-weight: 600;
+}
+.personal_info {
+  width: 100%;
+  padding: 20px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.instruction {
+  color: grey;
+}
+.form_input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form_input input {
+  height: 40px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 0px 15px;
+}
+.form_container {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 20px;
+  padding: 30px 0;
+  /* border: 1px solid red; */
+  height: 100%;
+}
+.btn_wrapper {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid red; */
+  align-items: flex-end;
+  display: flex;
+  justify-content: flex-end;
+}
+.nxt_btn {
+  height: 40px;
+  width: 100px;
+  border-radius: 5px;
+  border: none;
+  background-color: #03295a;
+  color: #fff;
+}
+.btn_wrapper_mobile{
+    display: none;
+}
+@media (max-width: 768px) {
+  .wrapper {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .card_container {
+    flex-direction: column;
+    min-width: 100%;
     padding: 0;
-    box-sizing: border-box;
-    font-family: "Ubuntu", sans-serif;
-}
-.wrapper{
-    background-color: #EEF5FF;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.card_container{
-    background-color: #fff;
-    /* border: 1px solid red; */
-    height: 550px;
-    width: 65%;
-    border-radius: 10px;
-    padding: 20px;
-    display: flex;
-}
-.sidebar{
+    height: 100%;
+    background-color: transparent;
     position: relative;
-    height: 100%;
-    width: fit-content;
-}
-.sidebar img{
-    height: 100%;
-}
-.steps{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.step_number{
-    width: 30px;
-    height: 30px;
-    display: flex;
+  }
+  .desktop_sidebar {
+    display: none;
+  }
+  .mobile_sidebar {
+    display: block;
+    width: 100%;
+  }
+  .step_desc {
+    display: none;
+  }
+  .sidebar_overlay {
+    flex-direction: row;
+    padding: 0;
+    align-items: flex-start;
     justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    border: 1px solid white;
-}
-.sidebar_overlay{
+    padding-top: 25px;
+  }
+  .personal_info {
+    padding: 15px;
+    width: 93%;
+    background-color: #fff;
+    margin-top: -30px;
+    margin: 0 auto;
+    border-radius: 10px;
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 8px;
-    /* border: 1px solid red; */
-    padding: 25px;
+    top: 80px;
+    left: 3.5%;
+  }
+  .personal_info h1{
+    font-size: 25px;
+  }
+  .btn_wrapper{
+    display: none;
+  }
+  .btn_wrapper_mobile{
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    color: #fff;
-}
-.step_desc{
-    font-size: 14px;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-}
-.step_desc p:last-child{
-    font-weight: 600;
-}
-.personal_info{
-    /* border: 1px solid red; */
-    width: 100%;
-    padding: 20px 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.instruction{
-    color: grey;
-}
-.form_input{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.form_input input{
-    height: 40px;
-    border-radius: 5px;
-    border: 1px solid grey;
-    padding: 0px 15px;
-}
-.form_container{
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    gap: 20px;
-    padding: 30px 0;
-    /* border: 1px solid red; */
-    height: 100%;
-}
-.btn_wrapper{
-    width: 100%;
-    height: 100%;
-    /* border: 1px solid red; */
-    align-items: flex-end;
-    display: flex;
+    padding: 15px;
+    background-color: #fff;
     justify-content: flex-end;
-}
-.nxt_btn{
-    height: 40px;
-    width: 100px;
-    border-radius: 5px;
-    border: none;
-    background-color: #03295A;
-    color: #fff;
+  }
+  .form_input{
+    gap: 2px;
+  }
+  .form_input label{
+    font-size: 12px;
+    color: #03295a;
+  }
 }
